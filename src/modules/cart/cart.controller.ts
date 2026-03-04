@@ -1,10 +1,18 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, Req, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Delete,
+  Body,
+  Param,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { CartService } from './cart.service';
 import { JwtAuthGuard } from '../../common/guard/jwt-auth.guard';
 import { AddToCartDto } from '../../model/dto/cart.dto';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('cart')
 @Controller('cart')
 @UseGuards(JwtAuthGuard)
 export class CartController {
@@ -23,10 +31,7 @@ export class CartController {
 
   // ✅ Cập nhật trạng thái check của tất cả items (phải đặt TRƯỚC :itemId)
   @Patch('check-all')
-  updateAllItemsCheck(
-    @Req() req,
-    @Body('isChecked') isChecked: boolean,
-  ) {
+  updateAllItemsCheck(@Req() req, @Body('isChecked') isChecked: boolean) {
     return this.cartService.updateAllItemsCheck(req.user.userId, isChecked);
   }
 

@@ -22,11 +22,9 @@ import { RolesGuard } from '../../common/guard/roles.guard';
 import { Roles } from '../../common/decorator/roles.decorator';
 import { FileInterceptor } from '@nestjs/platform-express/multer/interceptors/file.interceptor';
 import { diskStorage } from 'multer';
-import { ApiTags } from '@nestjs/swagger';
 import { extname } from 'path/win32';
 import { UpdateUserDto } from '../../model/dto/user.dto';
 
-@ApiTags('users')
 @Controller('users')
 @UseGuards(JwtAuthGuard, RolesGuard)
 export class UserController {

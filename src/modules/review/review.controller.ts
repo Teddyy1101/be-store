@@ -17,9 +17,7 @@ import { CreateReviewDto, UpdateReviewDto } from '../../model/dto/review.dto';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('reviews')
 @Controller('reviews')
 export class ReviewController {
   constructor(private readonly reviewService: ReviewService) {}

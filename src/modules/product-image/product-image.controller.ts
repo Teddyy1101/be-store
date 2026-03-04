@@ -13,9 +13,7 @@ import { JwtAuthGuard } from '../../common/guard/jwt-auth.guard';
 import { RolesGuard } from '../../common/guard/roles.guard';
 import { Roles } from '../../common/decorator/roles.decorator';
 import { CreateProductImageDto } from '../../model/dto/product-image.entity';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('product-images')
 @Controller('product-image')
 export class ProductImageController {
   constructor(private readonly imageService: ProductImageService) {}

@@ -23,9 +23,7 @@ import { Roles } from '../../common/decorator/roles.decorator';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('posts')
 @Controller('posts')
 export class PostController {
   constructor(private readonly postService: PostService) {}
@@ -70,7 +68,7 @@ export class PostController {
     }),
   )
   async create(
-    @Body('isActive', ParseBoolPipe) isActive: boolean, 
+    @Body('isActive', ParseBoolPipe) isActive: boolean,
     @Body() dto: CreatePostDto,
     @UploadedFile() file?: Express.Multer.File,
   ) {
@@ -97,7 +95,7 @@ export class PostController {
   )
   async update(
     @Param('slug') slug: string,
-    @Body('isActive', ParseBoolPipe) isActive: boolean, 
+    @Body('isActive', ParseBoolPipe) isActive: boolean,
     @Body() dto: UpdatePostDto,
     @UploadedFile() file?: Express.Multer.File,
   ) {

@@ -12,10 +12,8 @@ import { WarehouseService } from './warehouse.service';
 import { CreateWarehouseDto } from '../../model/dto/warehouse.dto';
 import { Roles } from '../../common/decorator/roles.decorator';
 import { JwtAuthGuard } from '../../common/guard/jwt-auth.guard';
-import { ApiTags } from '@nestjs/swagger';
 import { RolesGuard } from '../../common/guard/roles.guard';
 
-@ApiTags('warehouses')
 @Controller('warehouses')
 export class WarehouseController {
   constructor(private readonly warehouseService: WarehouseService) {}

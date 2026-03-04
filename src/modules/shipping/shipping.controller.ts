@@ -15,9 +15,7 @@ import {
   UpdateShippingDto,
 } from '../../model/dto/shipping.dto';
 import { JwtAuthGuard } from '../../common/guard/jwt-auth.guard';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('shipping')
 @Controller('shipping')
 export class ShippingController {
   constructor(private readonly shippingService: ShippingService) {}

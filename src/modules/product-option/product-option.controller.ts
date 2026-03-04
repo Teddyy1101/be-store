@@ -18,9 +18,7 @@ import {
 import { JwtAuthGuard } from '../../common/guard/jwt-auth.guard';
 import { RolesGuard } from '../../common/guard/roles.guard';
 import { Roles } from '../../common/decorator/roles.decorator';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('product-options')
 @Controller('product-options')
 export class ProductOptionController {
   constructor(private readonly optionService: ProductOptionService) {}

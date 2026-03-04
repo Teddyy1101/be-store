@@ -16,9 +16,7 @@ import {
 import { JwtAuthGuard } from '../../common/guard/jwt-auth.guard';
 import { RolesGuard } from '../../common/guard/roles.guard';
 import { Roles } from '../../common/decorator/roles.decorator';
-import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('product-specifications')
 @Controller('product-specification')
 export class ProductSpecificationController {
   constructor(private readonly specService: ProductSpecificationService) {}
